@@ -1,0 +1,19 @@
+on:
+  schedule:
+      - cron: "* * 1 * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: change theme
+        run: chmod +x update_theme.sh && ./update_theme.sh
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
