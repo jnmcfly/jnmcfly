@@ -7,16 +7,16 @@ current_season=""
 previous_season=""
 
 case $month in
-    12|1|2)
+    12|01|02)
         current_season="winter"
         ;;
-    3|4|5)
+    03|04|05)
         current_season="spring"
         ;;
-    6|7|8)
+    06|07|08)
         current_season="summer"
         ;;
-    9|10|11)
+    09|10|11)
         current_season="fall"
         ;;
     *)
